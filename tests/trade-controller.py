@@ -16,7 +16,11 @@ def trades():
     path_req = "/trades"
     method_req = "get"
     params_req = {"startTime": "",
-                  "endTime": ""}
+                  "endTime": "",
+                  "limit": "",
+                  "from": "",
+                  "direction": "NEXT"
+                  }
     sign = service.create_sign(params_req, method_req, path_req)
     headers.update(
         {
