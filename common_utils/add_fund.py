@@ -37,7 +37,7 @@ for user in toUserId:
             "businessId": businessId,
             "businessType": "201",
             "currencyId": coin,
-            "fromUserId": 10002,
+            "fromUserId": 20100,
             "remark": "add fund",
             "toUserId": user,
         }
