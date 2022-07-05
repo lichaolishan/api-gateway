@@ -13,7 +13,7 @@ service = SDK(access_key_req, secret_key_req, timestamp)
 
 
 def transferBalance():
-    path_req = "/accounts/transferBalance"
+    path_req = "/accounts/transfer"
     method_req = "post"
     params_req = {
         "currency": "USDT",
@@ -34,8 +34,8 @@ def transferBalance():
     print("\033[1;31m 划转响应\033[0m", res)
 
 
-def transferBalance_history():
-    path_req = "/accounts/transferBalance/history"
+def transfer_history():
+    path_req = "/accounts/transfer"
     method_req = "get"
     params_req = {
         "limit": "",
@@ -56,5 +56,23 @@ def transferBalance_history():
     print("\033[1;31m 划转记录响应\033[0m", res)
 
 
+def transfer_id_history():
+    path_req = "/accounts/transfer/5943"
+    method_req = "get"
+    params_req = {}
+    sign = service.create_sign(params_req, method_req, path_req)
+    headers.update(
+        {
+            "key": access_key_req,
+            "signTimestamp": str(timestamp),
+            "signature": sign,
+        }
+    )
+    print("\033[1;32m ---headers---\033[0m", headers)
+    res = ClientHttp(host_gateway, path_req, params_req, headers).get()
+    print("\033[1;31m 划转id响应\033[0m", res)
+
+
 transferBalance()
-transferBalance_history()
+transfer_history()
+transfer_id_history()
