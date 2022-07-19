@@ -40,6 +40,12 @@ def ConfigRead():
             "access_key": data["SAND"]["access_key"],
             "secret_key": data["SAND"]["secret_key"],
         }
+    if data["Switch"]["env"] == "PROD":
+        return {
+            "host_gateway": data["PROD"]["host_gateway"],
+            "access_key": data["PROD"]["access_key"],
+            "secret_key": data["PROD"]["secret_key"],
+        }
 
 
 data = ConfigRead()
