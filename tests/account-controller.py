@@ -47,7 +47,7 @@ def accountBalances():
 
 
 def accountsID():
-    path_req = "/accounts/37950174273753088/balances"
+    path_req = "/accounts/80001/balances"
     method_req = "get"
     params_req = {}
     sign = service.create_sign(params_req, method_req, path_req)
@@ -63,6 +63,6 @@ def accountsID():
     print("\033[1;31m accountsID响应\033[0m", res)
 
 
-account()
+# account()
 accountBalances()
-accountsID()
+# accountsID()
