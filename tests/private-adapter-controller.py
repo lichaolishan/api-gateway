@@ -44,7 +44,7 @@ def returnDepositAddresses():
 
 
 def generateNewAddress():
-    arg = {"command": "generateNewAddress", "nonce": nonce}
+    arg = {"command": "generateNewAddress", "currency": "ETH", "nonce": nonce}
     Sign = SdkV1(secret_key_req).create_sign(arg)
     headers["Sign"] = Sign
     print("\033[1;34m ---headers---\033[0m", headers)
@@ -54,7 +54,7 @@ def generateNewAddress():
 
 
 def returnDepositsWithdrawals():
-    arg = {"command": "returnDepositsWithdrawals", "nonce": nonce}
+    arg = {"command": "returnDepositsWithdrawals", "start": "1655649781", "end": "1658241781", "nonce": nonce}
     Sign = SdkV1(secret_key_req).create_sign(arg)
     headers["Sign"] = Sign
     print("\033[1;34m ---headers---\033[0m", headers)
@@ -89,9 +89,9 @@ def returnTradeHistory():
     arg = {
         "command": "returnTradeHistory",
         "currencyPair": "ALL",
-        "start": "1653668903",
-        "end": "1653751703",
-        "limit": 100,
+        "start": "1656952035",
+        "end": "1657124835",
+        "limit": 1,
         "nonce": nonce}
     Sign = SdkV1(secret_key_req).create_sign(arg)
     headers["Sign"] = Sign
@@ -104,7 +104,7 @@ def returnTradeHistory():
 def returnOrderTrades():
     arg = {
         "command": "returnOrderTrades",
-        "orderNumber": 53503090728599552,
+        "orderNumber": 67688219294134272,
         "nonce": nonce}
     Sign = SdkV1(secret_key_req).create_sign(arg)
     headers["Sign"] = Sign
@@ -117,7 +117,7 @@ def returnOrderTrades():
 def returnOrderStatus():
     arg = {
         "command": "returnOrderStatus",
-        "orderNumber": 60019465097744384,
+        "orderNumber": 67644449693421568,
         "nonce": nonce}
     Sign = SdkV1(secret_key_req).create_sign(arg)
     headers["Sign"] = Sign
@@ -140,12 +140,12 @@ def buy():
     arg = {
         "command": "buy",
         "currencyPair": "USDT_BTC",
-        "rate": "3",
-        "amount": "1",
+        "rate": "1.11",
+        "amount": "1.1111",
         # "postOnly": "0",
         # "fillOrKill": "0",
         # "immediateOrCancel": "1",
-        "clientOrderId": "314",
+        "clientOrderId": "",
         "nonce": nonce,
     }
     Sign = SdkV1(secret_key_req).create_sign(arg)
@@ -188,7 +188,7 @@ def sell():
 def cancelOrder():
     arg = {
         "command": "cancelOrder",
-        "orderNumber": "",
+        "orderNumber": "67699040183214080",
         "clientOrderId": "312",
         "nonce": nonce,
     }
@@ -224,9 +224,9 @@ def cancelReplace():
     """
     arg = {
         "command": "cancelReplace",
-        "orderNumber": "62501761008562176",
-        "rate": "2",
-        "amount": "2",
+        "orderNumber": "67699550479007744",
+        "rate": "2.22",
+        "amount": "2.222222",
         "nonce": nonce,
     }
     Sign = SdkV1(secret_key_req).create_sign(arg)
@@ -248,7 +248,7 @@ def moveOrder():
     """
     arg = {
         "command": "moveOrder",
-        "orderNumber": "62502163825324032",
+        "orderNumber": "67699754305417216",
         "clientOrderId": "",
         "rate": "4",
         "amount": "4",
@@ -269,9 +269,9 @@ def withdraw():
     """
     arg = {
         "command": "withdraw",
-        "currency": "USDTTRON",
-        "amount": "2",
-        "address": "0x84a90e21d9d02e30ddcea56d618aa75ba90331ff",
+        "currency": "USDT",
+        "amount": "11",
+        "address": "12AD5BXx6DehqjPY4itVVsYgTXazvdeHZ1",
         "nonce": nonce,
     }
     Sign = SdkV1(secret_key_req).create_sign(arg)
@@ -349,8 +349,8 @@ def transferBalance():
 # cancelAllOrders()
 # cancelReplace()
 # moveOrder()
-# withdraw()
+withdraw()
 # returnFeeInfo()
 # returnAvailableAccountBalances()
 # returnTradableBalances()
-# transferBalance()
+# transferBalance() 不通过adapters实现

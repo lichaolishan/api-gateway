@@ -32,8 +32,8 @@ def returnTradeHistory():
     params_req = {
         "command": "returnTradeHistory",
         "currencyPair": "USDT_BTC",
-        "start": "1410158341",
-        "end": "1410158341",
+        "start": "1653418232",
+        "end": "1653418232",
     }
     res = ClientHttp(host_gateway, path_req, params_req, headers).get()
     print("\033[1;31m returnTradeHistory响应\033[0m", res)
@@ -44,7 +44,7 @@ def returnChartData():
         "command": "returnChartData",
         "start": "1653418232",
         "end": "1654418232",
-        "currencyPair": "USDT_DOG",
+        "currencyPair": "USDT_LTC",
         "period": 300,
     }
     res = ClientHttp(host_gateway, path_req, params_req, headers).get()
@@ -57,9 +57,9 @@ def returnCurrencies():
     print("\033[1;31m returnCurrencies响应\033[0m", res)
 
 
-returnTicker()
+# returnTicker()
 # return24hVolume()
 # returnOrderBook()
 # returnTradeHistory()
 # returnChartData()
-# returnCurrencies()
+returnCurrencies()

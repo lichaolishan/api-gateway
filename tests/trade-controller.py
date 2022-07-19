@@ -36,7 +36,7 @@ def trades():
 
 def ordersIDTrades():
     # 根据订单查询用户trade
-    path_req = "/orders/60876613084196864/trades"
+    path_req = "/orders/67581772635889664/trades"
     method_req = "get"
     params_req = {}
     sign = service.create_sign(params_req, method_req, path_req)
