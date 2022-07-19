@@ -20,18 +20,18 @@ header_transfer = {
     "Authorization": Authorization}
 businessId = time.time()
 # Test environment currency list
-currencyId = [214, 28, 267, 125, 400, 315, 321, 243, 313, 299, 320, 668, 327]
+currencyId = [214, 28, 267, 125, 400, 315, 321, 243, 313, 299, 320, 668, 327, 162]
 # sandbox environment currency list
 # currencyId = [214, 299, 315, 542, 327, 267, 400, 324, 320, 28, 668]
 # List of users who need to add assets
 # 测试环境出款账户是20100，sandbox环境出款账户是10002
-toUserId = [30015]
+toUserId = [1227714]
 for user in toUserId:
     for coin in currencyId:
         if coin == 28:
-            amount = 100
+            amount = 100000000
         else:
-            amount = 10000
+            amount = 100000000
         params = {
             "amount": amount,
             "businessId": businessId,
