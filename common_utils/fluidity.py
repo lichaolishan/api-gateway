@@ -12,16 +12,17 @@ secret_key_req = data["secret_key"]
 
 path_req = "/orders"
 method_req = "post"
-price = 1
+price = 5
 
 while True:
     order_type = ["limit"]
     side = ["sell", "buy"]
+    symbols = ["btc_USDT"]
     amount = ["10", "12", "15", "17", "19", "23", "26", "32"]
-    quantity = ["10", "2", "30", "1.3", "25", "3.6"]
-    price_float = [0.98, 0.99, 1.01, 1.03, 1.02, 0.97]
+    quantity = ["1", "2", "3", "1.3", "2.5", "3.6"]
+    price_float = [0.99, 1.01]
     params_req = {
-        "symbol": "btc_usdt",
+        "symbol": random.choice(symbols),
         "accountType": "spot",
         "type": random.choice(order_type),
         "side": random.choice(side),
