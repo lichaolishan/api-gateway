@@ -19,7 +19,7 @@ def currencies():
 
 def currenciesName():
     # 根据币种名称获取币种的信息
-    path_req = "/currencies/btc"
+    path_req = "/currencies/1CR"
     method_req = "get"
     params_req = {}
     res = ClientHttp(host_gateway, path_req, params_req, headers).get()
@@ -37,7 +37,7 @@ def markets():
 
 def marketsName():
     # 新增根据交易对名称获取交易对信息
-    path_req = "/markets/btc_usdt"
+    path_req = "/markets/BTC_USDT"
     method_req = "get"
     params_req = {}
     res = ClientHttp(host_gateway, path_req, params_req, headers).get()
